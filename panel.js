@@ -73,7 +73,13 @@ function isJsonString(str) {
   return true;
 }
 
+function sleep(milliSeconds){
+    var startTime = new Date().getTime();                    // get the current time
+    while (new Date().getTime() < startTime + milliSeconds); // hog cpu until time's up
+}
+
 function findCorrectAns(answers) {
+  sleep(15000);
   for (let i = 0; i < answers.length; i++) {
     if (answers[i].isCorrectAnswer) {
       return i;
